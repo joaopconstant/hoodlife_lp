@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_run_code",
+      "Read(//c/Users/scott/.claude/**)",
+      "Bash(claude mcp:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(git mv:*)"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+import { About } from "@/components/About"
+import { Environment } from "@/components/Environment"
+import { DIfferentials } from "@/components/Differentials"
+import { DiscordCTA } from "@/components/DiscordCTA"
+import { Ecosystem } from "@/components/Ecosystem"
+import { ESRBRating } from "@/components/ESRBRating"
+import { Footer } from "@/components/Footer"
+import { Gallery } from "@/components/Gallery"
+import { Hero } from "@/components/Hero"
+import { Navbar } from "@/components/Navbar"
+import { Partners } from "@/components/Partners"
+import { Team } from "@/components/Team"
+import { Trailer } from "@/components/Trailer"
+
+export function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Trailer />
+        <Environment />
+        <Ecosystem />
+        <Gallery />
+        <DIfferentials />
+        <Team />
+        <Partners />
+        <DiscordCTA />
+      </main>
+      <ESRBRating />
+      <Footer />
+    </>
+  )
+}
+
+export default App
