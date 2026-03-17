@@ -65,7 +65,7 @@ export function DiscordCTA() {
             )}
           >
             <div
-              className="relative overflow-hidden rounded-sm"
+              className="relative overflow-hidden rounded-lg"
               style={{
                 boxShadow:
                   "0 0 0 1px oklch(1 0 0 / 0.08), 0 24px 64px oklch(0 0 0 / 0.5)",
