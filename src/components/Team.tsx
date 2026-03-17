@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useInView } from "@/hooks/useInView"
@@ -49,7 +50,7 @@ export function Team() {
     <section
       id="equipe"
       ref={sectionRef}
-      className="relative bg-bg-base h-screen pt-24 md:pt-32"
+      className="relative bg-bg-base py-24 md:py-32"
     >
       {/* Subtle grid pattern */}
       <div
@@ -64,7 +65,7 @@ export function Team() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="mb-16 text-center">
+        <div className="mb-20 text-center">
           <SectionHeader
             eyebrow="Nossa Equipe"
             title={
@@ -84,12 +85,12 @@ export function Team() {
         </div>
 
         {/* ── Member cards ───────────────────────────────────────── */}
-        <div className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {MEMBERS.map((member, index) => (
+        <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {MEMBERS.map((member) => (
             <MemberCard
               key={member.name}
               member={member}
-              animClass={cn(inView ? `animate-fade-up delay-${600 + index * 100}` : "opacity-0")}
+              animClass={cn(inView ? `animate-fade-up` : "opacity-0")}
             />
           ))}
         </div>
@@ -107,71 +108,118 @@ function MemberCard({
   member: (typeof MEMBERS)[number]
   animClass: string
 }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   return (
     <Card
+      onClick={() => setIsExpanded(!isExpanded)}
       className={cn(
-        "group relative flex flex-col overflow-hidden bg-bg-surface p-0 border-0! ring-0!",
+        "group relative flex cursor-pointer flex-col overflow-hidden bg-bg-surface/40 p-0 ring-0 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-2 hover:bg-bg-surface/60",
+        isExpanded && "-translate-y-2 bg-bg-surface/60",
         animClass
       )}
+      style={{
+        borderColor: isExpanded ? `${member.color}80` : `${member.color}30`,
+        borderWidth: "1px",
+        borderStyle: "solid",
+      }}
     >
-      {/* Role-colored top border — always visible */}
+      {/* Dynamic Glow Shadow on Hover / Active */}
       <div
-        className="absolute inset-x-0 top-0 h-0.5"
-        style={{ backgroundColor: member.color }}
+        className={cn(
+          "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+          isExpanded && "opacity-100"
+        )}
+        style={{
+          boxShadow: `0 20px 40px -20px ${member.color}50`,
+        }}
         aria-hidden="true"
       />
 
-      {/* Inset border ring — fades in on hover, contained within card */}
+      {/* Role-colored top border with glow */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ boxShadow: `inset 0 0 0 1px ${member.color}50` }}
+        className="absolute inset-x-0 top-0 z-20 h-1"
+        style={{
+          backgroundColor: member.color,
+          boxShadow: `0 0 15px ${member.color}80`,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle Inner Highlight on hover / Active */}
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+          isExpanded && "opacity-100"
+        )}
+        style={{
+          background: `linear-gradient(135deg, ${member.color}15 0%, transparent 40%)`,
+        }}
         aria-hidden="true"
       />
 
       <CardHeader className="p-8 pb-0">
-        {/* Avatar */}
+        {/* Avatar Explorer */}
         <div
-          className="relative mb-7 flex h-16 w-16 items-center justify-center rounded-md text-xl font-black"
+          className="relative mb-7 flex h-16 w-16 items-center justify-center rounded-xl text-xl font-black transition-transform duration-500 group-hover:scale-110"
           style={{
-            backgroundColor: `${member.color}18`,
-            border: `1px solid ${member.color}44`,
+            backgroundColor: `${member.color}15`,
+            border: `1px solid ${member.color}40`,
             color: member.color,
+            transform: isExpanded ? "scale(1.1)" : undefined,
           }}
         >
           {/* Avatar glow overlay */}
           <div
-            className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            style={{ boxShadow: `0 0 24px ${member.color}55` }}
+            className={cn(
+              "pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100",
+              isExpanded && "opacity-100"
+            )}
+            style={{ boxShadow: `0 0 20px ${member.color}50` }}
             aria-hidden="true"
           />
-          <span style={{ letterSpacing: "-0.02em", position: "relative" }}>
+          <span className="relative z-10" style={{ letterSpacing: "-0.02em" }}>
             {member.initials}
           </span>
         </div>
 
         {/* Identity */}
         <CardTitle
-          className="mb-1 text-2xl font-black tracking-tight text-text-primary"
+          className={cn(
+            "mb-1 text-2xl font-black tracking-tight text-text-primary transition-colors duration-300 group-hover:text-white",
+            isExpanded && "text-white"
+          )}
           style={{ letterSpacing: "-0.02em" }}
         >
           {member.name}
         </CardTitle>
         <p
-          className="text-[12px] font-bold tracking-widest uppercase"
+          className="text-[11px] font-bold tracking-[0.2em] uppercase"
           style={{ color: member.color }}
         >
           {member.role}
         </p>
       </CardHeader>
 
-      <CardContent className="p-8 pt-0">
-        {/* Description — collapses to 0 when not hovered */}
-        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:grid-rows-[1fr]">
+      <CardContent className="mt-4 p-8 pt-0">
+        {/* Description — collapses based on hover OR tap state */}
+        <div
+          className={cn(
+            "grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:grid-rows-[1fr]",
+            isExpanded && "grid-rows-[1fr]"
+          )}
+        >
           <div className="overflow-hidden">
-            <div className="mt-5 border-t border-border-subtle pt-5">
+            <div
+              className="mt-4 border-t pt-5"
+              style={{ borderColor: `${member.color}40` }}
+            >
               <p
-                className="translate-y-2 text-[13px] leading-[1.7] text-text-secondary opacity-0 transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
-                style={{ transitionDelay: "80ms" }}
+                className={cn(
+                  "translate-y-2 text-[13.5px] leading-[1.65] text-text-secondary opacity-0 transition-[opacity,transform] duration-500 group-hover:translate-y-0 group-hover:opacity-100",
+                  isExpanded && "translate-y-0 opacity-100"
+                )}
+                style={{ transitionDelay: isExpanded ? "0ms" : "100ms" }}
               >
                 {member.description}
               </p>
@@ -180,12 +228,10 @@ function MemberCard({
         </div>
       </CardContent>
 
-      {/* Bottom accent line */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-        style={{ backgroundColor: member.color }}
-        aria-hidden="true"
-      />
+      {/* Decorative Bottom Line (thin) */}
+      <div className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent opacity-50" />
     </Card>
   )
 }
+
+
