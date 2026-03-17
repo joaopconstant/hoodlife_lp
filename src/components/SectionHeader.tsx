@@ -20,7 +20,7 @@ export function SectionHeader({
       <p
         className={cn(
           "eyebrow mb-4",
-          inView ? "animate-fade-up delay-100" : "opacity-0"
+          inView ? "animate-fade-up delay-300" : "opacity-0"
         )}
       >
         {eyebrow}
@@ -28,7 +28,7 @@ export function SectionHeader({
       <h2
         className={cn(
           "text-3xl leading-tight font-black tracking-tight text-text-primary md:text-5xl",
-          inView ? "animate-fade-up delay-200" : "opacity-0"
+          inView ? "animate-fade-up delay-400" : "opacity-0"
         )}
       >
         {title}
@@ -37,7 +37,7 @@ export function SectionHeader({
         className={cn(
           "mt-4 flex",
           centered && "justify-center",
-          inView ? "animate-fade-up delay-300" : "opacity-0"
+          inView ? "animate-fade-up delay-500" : "opacity-0"
         )}
         aria-hidden="true"
       ></div>
@@ -46,7 +46,7 @@ export function SectionHeader({
           className={cn(
             "prose",
             centered && "mx-auto",
-            inView ? "animate-fade-up delay-400" : "opacity-0"
+            inView ? "animate-fade-up delay-600" : "opacity-0"
           )}
         >
           {subtitle}

@@ -44,7 +44,7 @@ export function Partners() {
       {/* ── Carousel ─────────────────────────────────────────────── */}
       <div
         className={cn(
-          "relative overflow-hidden transition-opacity duration-700",
+          "relative overflow-hidden transition-opacity duration-700 delay-500",
           inView ? "opacity-100" : "opacity-0"
         )}
         /* Edge fade mask */

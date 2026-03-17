@@ -70,7 +70,7 @@ export function Ecosystem() {
           <div
             className={cn(
               "flex shrink-0 items-center gap-2 pb-0.5",
-              inView ? "animate-fade-up delay-400" : "opacity-0"
+              inView ? "animate-fade-up delay-600" : "opacity-0"
             )}
           >
             <Button
@@ -95,7 +95,7 @@ export function Ecosystem() {
         </div>
 
         {/* ── Carousel ──────────────────────────────────────────── */}
-        <div className={cn("-mx-6 md:mx-0", inView ? "animate-fade-in delay-500" : "opacity-0")}>
+        <div className={cn("-mx-6 md:mx-0", inView ? "animate-fade-in delay-700" : "opacity-0")}>
           <div className="relative">
             {/* Edge fades */}
             <div

@@ -65,7 +65,7 @@ export function About() {
           <div
             className={cn(
               "prose mt-7",
-              inView ? "animate-fade-up delay-400" : "opacity-0"
+              inView ? "animate-fade-up delay-600" : "opacity-0"
             )}
           >
             <p>
@@ -100,7 +100,7 @@ export function About() {
             className={cn(
               "mt-8 rounded-r-sm border-l-2 border-brand-500 bg-bg-surface/60 py-4 pr-5 pl-5",
               "text-sm leading-relaxed text-text-secondary italic",
-              inView ? "animate-fade-up delay-500" : "opacity-0"
+              inView ? "animate-fade-up delay-800" : "opacity-0"
             )}
           >
             "Jogadores novatos são bem-vindos, desde que estejam dispostos a
@@ -115,7 +115,7 @@ export function About() {
           <div
             className={cn(
               "relative mt-10 flex justify-center overflow-hidden lg:hidden",
-              inView ? "animate-fade-up delay-600" : "opacity-0"
+              inView ? "animate-fade-up delay-1000" : "opacity-0"
             )}
           >
             <img

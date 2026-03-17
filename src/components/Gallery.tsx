@@ -58,7 +58,7 @@ export function Gallery() {
         <div
           className={cn(
             "grid grid-cols-1 gap-4 sm:grid-cols-2 md:auto-rows-[220px] md:grid-cols-3",
-            inView ? "animate-fade-in delay-500" : "opacity-0"
+            inView ? "animate-fade-in delay-700" : "opacity-0"
           )}
         >
           {IMAGES.map((img) => (

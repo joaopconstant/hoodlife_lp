@@ -71,7 +71,7 @@ export function Environment() {
         <div
           className={cn(
             "prose mx-auto max-w-2xl text-center",
-            inView ? "animate-fade-up delay-400" : "opacity-0"
+            inView ? "animate-fade-up delay-600" : "opacity-0"
           )}
         >
           <p>
@@ -96,13 +96,13 @@ export function Environment() {
 
         {/* ── Cards ──────────────────────────────────────────── */}
         <div className="mt-12 grid w-full gap-2 sm:grid-cols-3">
-          {CARDS.map((card) => (
+          {CARDS.map((card, index) => (
             <Card
               key={card.title}
               className={cn(
                 "group relative overflow-hidden rounded-lg bg-bg-surface/80 p-0 backdrop-blur-sm border-0! ring-0!",
                 "transition-colors duration-300 hover:bg-bg-elevated",
-                inView ? "animate-fade-up" : "opacity-0"
+                inView ? `animate-fade-up delay-${700 + index * 100}` : "opacity-0"
               )}
             >
               <CardHeader className="p-8 pb-0">

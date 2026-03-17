@@ -72,7 +72,7 @@ export function FAQ() {
         <div
           className={cn(
             "mt-12",
-            inView ? "animate-fade-up delay-400" : "opacity-0"
+            inView ? "animate-fade-up delay-600" : "opacity-0"
           )}
         >
           <Accordion type="single" collapsible className="w-full space-y-4">

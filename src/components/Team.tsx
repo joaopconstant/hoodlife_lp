@@ -85,11 +85,11 @@ export function Team() {
 
         {/* ── Member cards ───────────────────────────────────────── */}
         <div className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {MEMBERS.map((member) => (
+          {MEMBERS.map((member, index) => (
             <MemberCard
               key={member.name}
               member={member}
-              animClass={cn(inView ? `animate-fade-up delay-500` : "opacity-0")}
+              animClass={cn(inView ? `animate-fade-up delay-${600 + index * 100}` : "opacity-0")}
             />
           ))}
         </div>

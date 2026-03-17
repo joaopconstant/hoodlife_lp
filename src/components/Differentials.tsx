@@ -70,12 +70,12 @@ export function DIfferentials() {
 
         {/* ── Cards grid ─────────────────────────────────────── */}
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {ITEMS.map((item) => (
+          {ITEMS.map((item, index) => (
             <Card
               key={item.title}
               className={cn(
                 "group relative overflow-hidden rounded-lg bg-bg-surface p-0 transition-colors duration-300 hover:bg-bg-elevated border-0! ring-0!",
-                inView ? "animate-fade-up" : "opacity-0"
+                inView ? `animate-fade-up delay-${600 + index * 100}` : "opacity-0"
               )}
             >
               <CardHeader className="p-8 pb-0">

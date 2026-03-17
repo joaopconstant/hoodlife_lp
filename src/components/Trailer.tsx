@@ -28,7 +28,7 @@ export function Trailer() {
         <div
           className={cn(
             "relative",
-            inView ? "animate-fade-up delay-400" : "opacity-0"
+            inView ? "animate-fade-up delay-600" : "opacity-0"
           )}
         >
           {/* Glow behind the video */}
@@ -58,7 +58,7 @@ export function Trailer() {
         <div
           className={cn(
             "prose mx-auto mt-8 max-w-md text-center",
-            inView ? "animate-fade-up delay-500" : "opacity-0"
+            inView ? "animate-fade-up delay-700" : "opacity-0"
           )}
         >
           <p>

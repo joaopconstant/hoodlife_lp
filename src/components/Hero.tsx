@@ -76,7 +76,7 @@ export function Hero() {
           <img
             src={esrbSrc}
             alt="ESRB Mature 17+"
-            className="animate-fade-in h-10 w-auto opacity-60 delay-800"
+            className="animate-fade-in h-10 w-auto opacity-60 delay-1000"
             draggable={false}
           />
         </div>
@@ -85,12 +85,12 @@ export function Hero() {
         <div className="w-full max-w-7xl px-6 md:mx-4 lg:mx-20">
           <div className="max-w-3xl">
             {/* Eyebrow */}
-            <p className="eyebrow animate-fade-up mb-5 delay-100">
+            <p className="eyebrow animate-fade-up mb-5 delay-300">
               Bem vindo(a) ao Hoodlife
             </p>
 
             {/* Main title */}
-            <h1 className="text-display animate-fade-up text-5xl text-text-primary delay-200 md:text-7xl">
+            <h1 className="text-display animate-fade-up text-5xl text-text-primary delay-400 md:text-7xl">
               O VERDADEIRO
               <br />
               <span className="text-brand-500">HEAVY ROLEPLAY</span>
@@ -103,12 +103,12 @@ export function Hero() {
               className="mt-7 mb-6 h-px w-16 origin-left bg-brand-500"
               style={{
                 animation:
-                  "line-grow 0.6s cubic-bezier(0.16,1,0.3,1) 300ms both",
+                  "line-grow 0.6s cubic-bezier(0.16,1,0.3,1) 500ms both",
               }}
             />
 
             {/* Tagline */}
-            <p className="animate-fade-up max-w-md text-lg leading-relaxed font-light text-text-secondary delay-400">
+            <p className="animate-fade-up max-w-md text-lg leading-relaxed font-light text-text-secondary delay-600">
               <span className="font-normal text-text-primary">
                 Diferente de servidores convencionais, buscamos uma experiência
                 única, com foco na ambientação consistente dos personagens.
@@ -116,7 +116,7 @@ export function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="animate-fade-up mt-9 flex flex-wrap items-center gap-4 delay-500">
+            <div className="animate-fade-up mt-9 flex flex-wrap items-center gap-4 delay-700">
               <Button
                 asChild
                 variant="default"
@@ -138,7 +138,7 @@ export function Hero() {
         </div>
 
         {/* Bottom: stats bar */}
-        <div className="animate-fade-up mx-auto w-full max-w-7xl delay-600">
+        <div className="animate-fade-up mx-auto w-full max-w-7xl delay-800">
           <div className="border-t border-border-subtle">
             <div className="grid grid-cols-2 divide-x divide-border-subtle sm:grid-cols-4">
               {STATS.map(({ icon: Icon, value, label }) => (
@@ -165,7 +165,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="animate-fade-in absolute right-6 bottom-22 z-10 hidden flex-col items-center gap-2 delay-700 md:flex">
+      <div className="animate-fade-in absolute right-6 bottom-22 z-10 hidden flex-col items-center gap-2 delay-900 md:flex">
         <span className="text-[10px] font-semibold tracking-[0.2em] text-text-disabled uppercase [writing-mode:vertical-rl]">
           Scroll
         </span>

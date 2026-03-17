@@ -29,7 +29,7 @@ export function DiscordCTA() {
             <div
               className={cn(
                 "prose mt-7",
-                inView ? "animate-fade-up delay-400" : "opacity-0"
+                inView ? "animate-fade-up delay-600" : "opacity-0"
               )}
             >
               <p>
@@ -44,7 +44,7 @@ export function DiscordCTA() {
               rel="noopener noreferrer"
               className={cn(
                 "group mt-10 inline-flex items-center gap-3 rounded-sm bg-brand-500 px-6 py-3.5 text-sm font-bold tracking-wider text-white uppercase transition-[background-color,box-shadow] duration-300 hover:bg-brand-400 hover:shadow-[0_0_32px_oklch(0.56_0.27_255/0.35)]",
-                inView ? "animate-fade-up delay-500" : "opacity-0"
+                inView ? "animate-fade-up delay-800" : "opacity-0"
               )}
             >
               <RiDiscordFill size={18} aria-hidden="true" />
@@ -61,7 +61,7 @@ export function DiscordCTA() {
           <div
             className={cn(
               "flex justify-center lg:justify-end",
-              inView ? "animate-fade-up delay-300" : "opacity-0"
+              inView ? "animate-fade-up delay-900" : "opacity-0"
             )}
           >
             <div
