@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/useInView"
 import { SectionHeader } from "@/components/SectionHeader"
 import {
-  RiQuillPenLine,
+  RiChatVoiceLine,
   RiShieldCheckLine,
   RiTerminalBoxLine,
   RiBuildingLine,
@@ -12,7 +12,7 @@ import {
 
 const ITEMS = [
   {
-    Icon: RiQuillPenLine,
+    Icon: RiChatVoiceLine,
     title: "Interpretação acima de mecânicas",
     body: "Os sistemas existem para apoiar o roleplay, não para substituí-lo. Histórias, escolhas e consequências têm prioridade sobre qualquer mecânica.",
   },

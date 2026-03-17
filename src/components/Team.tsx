@@ -48,7 +48,7 @@ export function Team() {
     <section
       id="equipe"
       ref={sectionRef}
-      className="relative bg-bg-base py-24 md:py-32"
+      className="relative bg-bg-base h-screen pt-24 md:pt-32"
     >
       {/* Subtle grid pattern */}
       <div
