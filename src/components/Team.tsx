@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useInView } from "@/hooks/useInView"
 import { SectionHeader } from "@/components/SectionHeader"
 
@@ -107,9 +108,9 @@ function MemberCard({
   animClass: string
 }) {
   return (
-    <article
+    <Card
       className={cn(
-        "group relative flex flex-col overflow-hidden bg-bg-surface p-8",
+        "group relative flex flex-col overflow-hidden bg-bg-surface p-0 border-0! ring-0!",
         animClass
       )}
     >
@@ -127,53 +128,57 @@ function MemberCard({
         aria-hidden="true"
       />
 
-      {/* Avatar */}
-      <div
-        className="relative mb-7 flex h-16 w-16 items-center justify-center rounded-md text-xl font-black"
-        style={{
-          backgroundColor: `${member.color}18`,
-          border: `1px solid ${member.color}44`,
-          color: member.color,
-        }}
-      >
-        {/* Avatar glow overlay */}
+      <CardHeader className="p-8 pb-0">
+        {/* Avatar */}
         <div
-          className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{ boxShadow: `0 0 24px ${member.color}55` }}
-          aria-hidden="true"
-        />
-        <span style={{ letterSpacing: "-0.02em", position: "relative" }}>
-          {member.initials}
-        </span>
-      </div>
+          className="relative mb-7 flex h-16 w-16 items-center justify-center rounded-md text-xl font-black"
+          style={{
+            backgroundColor: `${member.color}18`,
+            border: `1px solid ${member.color}44`,
+            color: member.color,
+          }}
+        >
+          {/* Avatar glow overlay */}
+          <div
+            className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            style={{ boxShadow: `0 0 24px ${member.color}55` }}
+            aria-hidden="true"
+          />
+          <span style={{ letterSpacing: "-0.02em", position: "relative" }}>
+            {member.initials}
+          </span>
+        </div>
 
-      {/* Identity */}
-      <h3
-        className="mb-1 text-2xl font-black tracking-tight text-text-primary"
-        style={{ letterSpacing: "-0.02em" }}
-      >
-        {member.name}
-      </h3>
-      <p
-        className="text-[12px] font-bold tracking-widest uppercase"
-        style={{ color: member.color }}
-      >
-        {member.role}
-      </p>
+        {/* Identity */}
+        <CardTitle
+          className="mb-1 text-2xl font-black tracking-tight text-text-primary"
+          style={{ letterSpacing: "-0.02em" }}
+        >
+          {member.name}
+        </CardTitle>
+        <p
+          className="text-[12px] font-bold tracking-widest uppercase"
+          style={{ color: member.color }}
+        >
+          {member.role}
+        </p>
+      </CardHeader>
 
-      {/* Description — collapses to 0 when not hovered */}
-      <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:grid-rows-[1fr]">
-        <div className="overflow-hidden">
-          <div className="mt-5 border-t border-border-subtle pt-5">
-            <p
-              className="translate-y-2 text-[13px] leading-[1.7] text-text-secondary opacity-0 transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
-              style={{ transitionDelay: "80ms" }}
-            >
-              {member.description}
-            </p>
+      <CardContent className="p-8 pt-0">
+        {/* Description — collapses to 0 when not hovered */}
+        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:grid-rows-[1fr]">
+          <div className="overflow-hidden">
+            <div className="mt-5 border-t border-border-subtle pt-5">
+              <p
+                className="translate-y-2 text-[13px] leading-[1.7] text-text-secondary opacity-0 transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                style={{ transitionDelay: "80ms" }}
+              >
+                {member.description}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </CardContent>
 
       {/* Bottom accent line */}
       <div
@@ -181,6 +186,6 @@ function MemberCard({
         style={{ backgroundColor: member.color }}
         aria-hidden="true"
       />
-    </article>
+    </Card>
   )
 }

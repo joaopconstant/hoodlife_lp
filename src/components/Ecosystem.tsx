@@ -5,6 +5,8 @@ import { SectionHeader } from "@/components/SectionHeader"
 import useEmblaCarousel from "embla-carousel-react"
 import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
 import cardCriminal from "@/assets/card-criminal.png"
 import cardBusiness from "@/assets/card-business.png"
 import cardPolice from "@/assets/card-police.png"
@@ -113,9 +115,9 @@ export function Ecosystem() {
                     key={card.category}
                     className="min-w-0 flex-[0_0_85%] pl-5 sm:flex-[0_0_45%] lg:flex-[0_0_28%]"
                   >
-                    <article
+                    <Card
                       className={cn(
-                        "group relative aspect-3/4 cursor-pointer overflow-hidden rounded-lg",
+                        "group relative aspect-3/4 cursor-pointer overflow-hidden rounded-lg p-0 ring-0!",
                         "border border-border-default transition-[border-color,box-shadow] duration-300 hover:border-brand-500"
                       )}
                     >
@@ -134,14 +136,14 @@ export function Ecosystem() {
                         aria-hidden="true"
                       />
                       <div className="absolute right-0 bottom-0 left-0 p-5">
-                        <span className="mb-3 inline-block rounded-sm bg-brand-500/20 px-2.5 py-1 text-[10px] font-bold tracking-[0.15em] text-brand-400 uppercase ring-1 ring-brand-500/40">
+                        <Badge variant="secondary" className="mb-3 rounded-sm bg-brand-500/20 px-2.5 py-1 text-[10px] font-bold tracking-[0.15em] text-brand-400 uppercase ring-1 ring-brand-500/40 border-0!">
                           {card.category}
-                        </span>
+                        </Badge>
                         <h3 className="text-base leading-snug font-bold text-text-primary md:text-lg">
                           {card.title}
                         </h3>
                       </div>
-                    </article>
+                    </Card>
                   </div>
                 ))}
               </div>

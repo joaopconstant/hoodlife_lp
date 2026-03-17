@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useInView } from "@/hooks/useInView"
 import { SectionHeader } from "@/components/SectionHeader"
 import darkCityBg from "@/assets/dark-city-bg.jpg"
@@ -96,25 +97,29 @@ export function Environment() {
         {/* ── Cards ──────────────────────────────────────────── */}
         <div className="mt-12 grid w-full gap-2 sm:grid-cols-3">
           {CARDS.map((card) => (
-            <article
+            <Card
               key={card.title}
               className={cn(
-                "group relative overflow-hidden rounded-lg bg-bg-surface/80 p-8 backdrop-blur-sm",
+                "group relative overflow-hidden rounded-lg bg-bg-surface/80 p-0 backdrop-blur-sm border-0! ring-0!",
                 "transition-colors duration-300 hover:bg-bg-elevated",
                 inView ? "animate-fade-up" : "opacity-0"
               )}
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md border border-brand-500/25 bg-brand-500/10 text-brand-400 shadow-[0_0_20px_oklch(0.56_0.27_255/0.12)] transition-[background-color,border-color,box-shadow] duration-300 group-hover:border-brand-500/50 group-hover:bg-brand-500/20 group-hover:shadow-[0_0_28px_oklch(0.56_0.27_255/0.25)]">
-                <card.Icon size={22} aria-hidden="true" />
-              </div>
+              <CardHeader className="p-8 pb-0">
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md border border-brand-500/25 bg-brand-500/10 text-brand-400 shadow-[0_0_20px_oklch(0.56_0.27_255/0.12)] transition-[background-color,border-color,box-shadow] duration-300 group-hover:border-brand-500/50 group-hover:bg-brand-500/20 group-hover:shadow-[0_0_28px_oklch(0.56_0.27_255/0.25)]">
+                  <card.Icon size={22} aria-hidden="true" />
+                </div>
 
-              <h3 className="mb-2 text-base leading-snug font-bold text-text-primary md:text-lg">
-                {card.title}
-              </h3>
-              <p className="text-[14px] leading-relaxed text-text-secondary">
-                {card.body}
-              </p>
-            </article>
+                <CardTitle className="mb-2 text-base leading-snug font-bold text-text-primary md:text-lg">
+                  {card.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-8 pt-0">
+                <p className="text-[14px] leading-relaxed text-text-secondary">
+                  {card.body}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
