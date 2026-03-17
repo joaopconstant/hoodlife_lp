@@ -19,13 +19,13 @@ export function App() {
       <main>
         <Hero />
         <About />
+        <Partners />
         <Trailer />
         <Environment />
         <Ecosystem />
         <Gallery />
         <DIfferentials />
         <Team />
-        <Partners />
         <DiscordCTA />
       </main>
       <ESRBRating />

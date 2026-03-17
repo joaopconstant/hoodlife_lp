@@ -93,20 +93,20 @@ export function Ecosystem() {
         </div>
 
         {/* ── Carousel ──────────────────────────────────────────── */}
-        <div className={inView ? "animate-fade-in delay-500" : "opacity-0"}>
+        <div className={cn("-mx-6 md:mx-0", inView ? "animate-fade-in delay-500" : "opacity-0")}>
           <div className="relative">
             {/* Edge fades */}
             <div
-              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-bg-base to-transparent"
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-bg-base via-bg-base/80 to-transparent md:w-32"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-bg-base to-transparent"
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-bg-base via-bg-base/80 to-transparent md:w-32"
               aria-hidden="true"
             />
 
             {/* Embla viewport — Embla v8 supports gap natively */}
-            <div className="touch-pan-y overflow-hidden" ref={emblaRef}>
+            <div className="touch-pan-y overflow-hidden px-6 md:px-0" ref={emblaRef}>
               <div className="-ml-5 flex">
                 {CARDS.map((card) => (
                   <div

@@ -29,7 +29,7 @@ export function Environment() {
     <section
       id="ambientacao"
       ref={sectionRef}
-      className="relative h-dvh overflow-hidden bg-bg-base"
+      className="relative h-full overflow-hidden bg-bg-base"
     >
       {/* ── Background ───────────────────────────────────────── */}
       <div

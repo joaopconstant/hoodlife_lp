@@ -11,7 +11,7 @@ export function About() {
     <section
       id="sobre"
       ref={sectionRef}
-      className="relative h-dvh overflow-hidden bg-bg-base"
+      className="relative h-full overflow-hidden bg-bg-base"
     >
       {/* ── Background ───────────────────────────────────────── */}
       <div
@@ -123,10 +123,6 @@ export function About() {
               alt="Personagens Hoodlife"
               className="w-auto object-contain object-bottom select-none"
               draggable={false}
-            />
-            <div
-              className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-bg-base to-transparent"
-              aria-hidden="true"
             />
           </div>
         </div>
