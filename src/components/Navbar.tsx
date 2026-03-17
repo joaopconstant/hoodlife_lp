@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 
 const NAV_LINKS = [
   { label: "SOBRE", href: "#sobre" },
-  { label: "TRAILER", href: "#trailer" },
   { label: "AMBIENTAÇÃO", href: "#ambientacao" },
   { label: "ECOSSISTEMA", href: "#ecossistema" },
   { label: "GALERIA", href: "#galeria" },
   { label: "DIFERENCIAIS", href: "#diferenciais" },
   { label: "EQUIPE", href: "#equipe" },
+  { label: "FAQ", href: "#faq" },
   { label: "COMUNIDADE", href: "#comunidade" },
-]
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -62,7 +62,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="focus-brand relative rounded-sm text-sm font-medium text-text-secondary transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-brand-500 after:transition-[width] after:duration-200 hover:text-text-primary hover:after:w-full"
+                className="focus-brand relative rounded-sm text-xs font-medium text-text-secondary transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-brand-500 after:transition-[width] after:duration-200 hover:text-text-primary hover:after:w-full"
               >
                 {link.label}
               </a>

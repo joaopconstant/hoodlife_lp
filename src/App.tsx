@@ -4,6 +4,7 @@ import { DIfferentials } from "@/components/Differentials"
 import { DiscordCTA } from "@/components/DiscordCTA"
 import { Ecosystem } from "@/components/Ecosystem"
 import { ESRBRating } from "@/components/ESRBRating"
+import { FAQ } from "@/components/FAQ"
 import { Footer } from "@/components/Footer"
 import { Gallery } from "@/components/Gallery"
 import { Hero } from "@/components/Hero"
@@ -26,6 +27,7 @@ export function App() {
         <Gallery />
         <DIfferentials />
         <Team />
+        <FAQ />
         <DiscordCTA />
       </main>
       <ESRBRating />
