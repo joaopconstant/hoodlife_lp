@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/useInView"
-import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/SectionHeader"
 import { RiDiscordFill, RiArrowRightLine } from "@remixicon/react"
 
@@ -65,7 +64,7 @@ export function DiscordCTA() {
               inView ? "animate-fade-up delay-300" : "opacity-0"
             )}
           >
-            <Card
+            <div
               className="relative overflow-hidden rounded-lg border-0! ring-0!"
               style={{
                 boxShadow:
@@ -81,7 +80,7 @@ export function DiscordCTA() {
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 title="Servidor Discord Hoodlife"
               />
-            </Card>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils"
-import { Separator } from "@/components/ui/separator"
 
 interface SectionHeaderProps {
   eyebrow: string
@@ -41,9 +40,7 @@ export function SectionHeader({
           inView ? "animate-fade-up delay-300" : "opacity-0"
         )}
         aria-hidden="true"
-      >
-        <Separator className="h-0.5 w-12 bg-brand-500" />
-      </div>
+      ></div>
       {subtitle && (
         <div
           className={cn(
