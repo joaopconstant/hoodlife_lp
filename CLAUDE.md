@@ -46,10 +46,22 @@ pnpx shadcn add <component>
 src/
   assets/           # Images, video, SVG — import directly in TSX
   components/
-    ui/             # shadcn primitives
+    ui/             # shadcn primitives (button, card, badge, separator, accordion)
     Navbar.tsx      # Fixed navbar — transparent → frosted glass on scroll
     Hero.tsx        # Full-viewport hero with video background
     About.tsx       # About section with character art + text
+    Partners.tsx    # Partner logos grid
+    Trailer.tsx     # Embedded trailer section
+    Environment.tsx # "Ambientação" section — city background + 3 feature cards
+    Ecosystem.tsx   # Ecosystem/features section
+    Gallery.tsx     # Image gallery section
+    Differentials.tsx # Differentials/highlights section
+    Team.tsx        # Team members section
+    FAQ.tsx         # FAQ accordion section
+    DiscordCTA.tsx  # Discord call-to-action section
+    ESRBRating.tsx  # ESRB rating badge (fixed overlay)
+    Footer.tsx      # Page footer
+    SectionHeader.tsx # Reusable section header (eyebrow + h2 + accent line + subtitle)
   hooks/
     useInView.ts    # IntersectionObserver hook — fires once, then disconnects
   lib/utils.ts      # cn() utility
@@ -101,28 +113,29 @@ Use `md:text-5xl` to override size when needed. Uppercase titles via `uppercase`
 
 Keyframes defined in `index.css`: `fade-up`, `fade-in`, `slide-down`, `line-grow`.
 
-**Section header pattern** — use consistently across all sections:
+**`SectionHeader` component** — use this instead of writing the header pattern manually:
 ```tsx
-<p className={cn("eyebrow mb-4", inView ? "animate-fade-up delay-100" : "opacity-0")}>
-  Eyebrow label
-</p>
-<h2 className={cn("text-3xl leading-tight font-black tracking-tight text-text-primary md:text-5xl",
-  inView ? "animate-fade-up delay-200" : "opacity-0")}>
-  TÍTULO <span className="text-brand-500">DESTAQUE</span>
-</h2>
-<div className={cn("mt-4 h-0.5 w-12 bg-brand-500", inView ? "animate-fade-up delay-300" : "opacity-0")} aria-hidden="true" />
-{/* subtitle (optional): prose + delay-400 */}
+import { SectionHeader } from "@/components/SectionHeader"
+
+<SectionHeader
+  eyebrow="Label"
+  title={<>TÍTULO <span className="text-brand-500">DESTAQUE</span></>}
+  subtitle={<p>Optional subtitle text.</p>}  {/* renders inside .prose */}
+  centered  {/* optional — centers text + accent line */}
+  inView={inView}
+/>
 ```
-`mx-auto` on the blue line when the header is centered. Delays cascade: eyebrow 100 → h2 200 → line 300 → subtitle 400 → content 500.
+Internal delay cascade: eyebrow `delay-300` → h2 `delay-400` → accent line `delay-500` → subtitle `delay-600`.
+Content below the header should start at `delay-600` or higher (e.g. `delay-700`, `delay-800`, staggered per item).
 
 **Scroll-triggered pattern** (used in every section):
 ```tsx
 const [sectionRef, inView] = useInView<HTMLElement>(0.12)
 
 <section ref={sectionRef}>
-  <p className={cn("eyebrow", inView ? "animate-fade-up delay-100" : "opacity-0")}>
-  <h2 className={cn(inView ? "animate-fade-up delay-200" : "opacity-0")}>
-  <div className={cn("prose", inView ? "animate-fade-up delay-300" : "opacity-0")}>
+  <SectionHeader eyebrow="..." title={...} inView={inView} />
+  {/* content starts at delay-600+ */}
+  <div className={cn(..., inView ? "animate-fade-up delay-600" : "opacity-0")}>
 ```
 
 Delay utilities: `delay-100` through `delay-800` (100ms increments).
