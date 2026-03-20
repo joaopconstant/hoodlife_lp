@@ -10,6 +10,7 @@ import partner5 from "@/assets/partner5.png"
 import partner6 from "@/assets/partner6.png"
 import partner7 from "@/assets/partner7.png"
 import partner8 from "@/assets/partner8.png"
+import partner9 from "@/assets/partner9.png"
 
 const LOGOS = [
   { src: partner1, alt: "Parceiro 1" },
@@ -20,6 +21,7 @@ const LOGOS = [
   { src: partner6, alt: "Parceiro 6" },
   { src: partner7, alt: "Parceiro 7" },
   { src: partner8, alt: "Parceiro 8" },
+  { src: partner9, alt: "Parceiro 9" },
 ]
 
 export function Partners() {
