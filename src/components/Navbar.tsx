@@ -76,7 +76,7 @@ export function Navbar() {
               size="sm"
               className="glow-brand-sm hover:glow-brand focus-brand rounded-sm bg-brand-500 font-semibold tracking-wider text-white uppercase hover:bg-brand-400"
             >
-              <a href="#como-jogar">Jogar Agora</a>
+              <a href="https://discord.gg/hoodlifels" target="_blank">Jogar Agora</a>
             </Button>
           </div>
 

@@ -123,7 +123,7 @@ export function Hero() {
                 size="lg"
                 className="glow-brand-sm hover:glow-brand focus-brand rounded-sm bg-brand-500 font-semibold tracking-wider text-white uppercase hover:bg-brand-400"
               >
-                <a href="#como-jogar">Conectar ao Servidor</a>
+                <a href="https://discord.gg/hoodlifels" target="_blank">Conectar ao Servidor</a>
               </Button>
               <Button
                 asChild
