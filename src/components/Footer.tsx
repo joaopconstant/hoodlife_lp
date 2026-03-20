@@ -38,6 +38,11 @@ const navColumns = [
       { label: "Sobre", href: "#sobre" },
       { label: "Diferenciais", href: "#diferenciais" },
       { label: "Parceiros", href: "#parceiros" },
+      {
+        label: "Documentação",
+        href: "https://hoodlife.gitbook.io/docs",
+        external: true,
+      },
     ],
   },
   {
@@ -45,6 +50,7 @@ const navColumns = [
     links: [
       { label: "Equipe", href: "#equipe" },
       { label: "Galeria", href: "#galeria" },
+      { label: "FAQ", href: "#faq" },
       {
         label: "Discord",
         href: "https://discord.gg/hoodlifels",
