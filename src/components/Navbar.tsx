@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { RiCloseLine, RiMenu3Line } from "@remixicon/react"
+import { RiBookLine, RiCloseLine, RiMenu3Line } from "@remixicon/react"
 import { cn } from "@/lib/utils"
 import logoSrc from "@/assets/logo-horizontal.png"
 import { Button } from "@/components/ui/button"
@@ -69,27 +69,46 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-3">
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="focus-brand rounded-sm text-text-secondary hover:bg-transparent hover:text-text-primary"
+            >
+              <a
+                href="https://hoodlife.gitbook.io/docs"
+                target="_blank"
+                rel="noreferrer"
+                title="Documentação"
+                aria-label="Documentação"
+              >
+                <RiBookLine size={22} />
+              </a>
+            </Button>
+
             <Button
               asChild
               variant="default"
               size="sm"
-              className="glow-brand-sm hover:glow-brand focus-brand rounded-sm bg-brand-500 font-semibold tracking-wider text-white uppercase hover:bg-brand-400"
+              className="glow-brand-sm hover:glow-brand focus-brand hidden rounded-sm bg-brand-500 font-semibold tracking-wider text-white uppercase hover:bg-brand-400 lg:flex"
             >
-              <a href="https://discord.gg/hoodlifels" target="_blank">Jogar Agora</a>
+              <a href="https://discord.gg/hoodlifels" target="_blank">
+                Jogar Agora
+              </a>
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMenuOpen((v) => !v)}
+              className="focus-brand rounded-sm text-text-secondary hover:bg-transparent hover:text-text-primary lg:hidden"
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <RiCloseLine size={22} /> : <RiMenu3Line size={22} />}
             </Button>
           </div>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMenuOpen((v) => !v)}
-            className="focus-brand rounded-sm text-text-secondary hover:bg-transparent hover:text-text-primary lg:hidden"
-            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <RiCloseLine size={22} /> : <RiMenu3Line size={22} />}
-          </Button>
         </div>
       </header>
 
