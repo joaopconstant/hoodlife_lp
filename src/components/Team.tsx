@@ -233,5 +233,3 @@ function MemberCard({
     </Card>
   )
 }
-
-
