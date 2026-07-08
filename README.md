@@ -2,7 +2,15 @@
 
 Landing page for **Hoodlife**, a FiveM heavy roleplay server set in Los Santos.
 
-Built with React 19, TypeScript, Vite, Tailwind CSS v4, and shadcn/ui.
+🔗 Live at [hoodlife.com.br](https://hoodlife.com.br)
+
+## Stack
+
+- **React 19 + TypeScript + Vite**
+- **Tailwind CSS v4** via `@tailwindcss/vite` — design tokens in `src/index.css`
+- **shadcn/ui** components in `src/components/ui/`
+
+See `CLAUDE.md` for the full architecture and design system reference.
 
 ## Getting started
 
@@ -22,10 +30,7 @@ pnpm typecheck    # Type-check only (no emit)
 pnpm preview      # Preview production build
 ```
 
-## Stack
+## License
 
-- **React 19 + TypeScript + Vite**
-- **Tailwind CSS v4** via `@tailwindcss/vite` — design tokens in `src/index.css`
-- **shadcn/ui** components in `src/components/ui/`
-
-See `CLAUDE.md` for the full architecture and design system reference.
+All rights reserved. This source code is proprietary to Hoodlife and is not
+licensed for reuse, modification, or redistribution.
