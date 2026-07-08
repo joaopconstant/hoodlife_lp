@@ -1,21 +1,31 @@
-# React + TypeScript + Vite + shadcn/ui
+# Hoodlife — Landing Page
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+Landing page for **Hoodlife**, a FiveM heavy roleplay server set in Los Santos.
 
-## Adding components
+Built with React 19, TypeScript, Vite, Tailwind CSS v4, and shadcn/ui.
 
-To add components to your app, run the following command:
+## Getting started
 
 ```bash
-npx shadcn@latest add button
+pnpm install
+pnpm dev
 ```
 
-This will place the ui components in the `src/components` directory.
+## Scripts
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button"
+```bash
+pnpm dev          # Start dev server
+pnpm build        # Type-check + production build
+pnpm lint         # ESLint
+pnpm format       # Prettier (formats .ts/.tsx)
+pnpm typecheck    # Type-check only (no emit)
+pnpm preview      # Preview production build
 ```
+
+## Stack
+
+- **React 19 + TypeScript + Vite**
+- **Tailwind CSS v4** via `@tailwindcss/vite` — design tokens in `src/index.css`
+- **shadcn/ui** components in `src/components/ui/`
+
+See `CLAUDE.md` for the full architecture and design system reference.
