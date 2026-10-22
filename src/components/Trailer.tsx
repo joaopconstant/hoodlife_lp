@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/useInView"
 import { SectionHeader } from "@/components/SectionHeader"
 
-const VIDEO_ID = "LdBrW5uY_v1V0aa0"
+const VIDEO_ID = "V-Hpe5W6rlU"
 
 export function Trailer() {
   const [sectionRef, inView] = useInView<HTMLElement>(0.15)
